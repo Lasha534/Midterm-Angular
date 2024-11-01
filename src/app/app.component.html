@@ -1,0 +1,95 @@
+<div>
+  {{title}}
+</div>
+<br>
+<div *ngFor="let person of people">
+    <div *ngIf="person.age>20"> {{person.firstname}} {{person.lastname}} {{person.age}}</div>
+</div>
+<br>
+
+<h1>Array from parent component</h1> 
+<div *ngFor="let data of parentPeople">
+  <app-user [readData]='data'></app-user>
+</div>
+
+<h1>Array from child component</h1>
+<app-user parentFunction="parentFunction($event)">
+  <div *ngFor="let user of inputData">
+    {{user.id}} 
+    {{user.Firstname}}
+    {{user.Lastname}}
+    {{user.DateOfBirth}}
+    {{user.PhoneNumber}}
+    {{user.Email}}
+  </div>
+</app-user>
+
+
+<!--<div class="container-fluid">
+  <form #userform="ngform">
+    <div class="form-group">
+      <labeL>Id</labeL>
+      <input
+      type="text" name="id" 
+      class="form-control" #id="ngModel" [(ngModel)]="newperson.id"
+      [class.is-invalid]="id.invalid && id.touched"
+      >
+      <small class="text-danger" [class.d-none]="id.valid || id.untouched"></small>
+    </div>
+    <div class="form-group">
+      <labeL>Firstname</labeL>
+      <input
+      type="text" name="Firstname" minlength="3"
+      class="form-control" #Firstname="ngModel" [(ngModel)]="newperson.Firstname"
+      [class.is-invalid]="Firstname.invalid && Firstname.touched"
+      >
+      <small class="text-danger" [class.d-none]="Firstname.valid || Firstname.untouched"></small>
+    </div>
+  <div class="form-group">
+    <labeL>Lastname</labeL>
+    <input
+    type="text" name="Lastname" required minlength="3"
+    class="form-control" #Lastname="ngModel" [(ngModel)]="newperson.Lastname"
+    [class.is-invalid]="Lastname.invalid && Lastname.touched"
+    >
+    <small class="text-danger" [class.d-none]="Lastname.valid || Lastname.untouched"></small>
+  </div>
+  <div class="form-group">
+    <labeL>DateOfBirth</labeL>
+    <input
+    type="text" name="DateOfBirth" 
+    class="form-control" #DateOfBirth="ngModel" [(ngModel)]="newperson.DateOfBirth"
+    [class.is-invalid]="DateOfBirth.invalid && DateOfBirth.touched"
+    >
+    <small class="text-danger" [class.d-none]="DateOfBirth.valid || DateOfBirth.untouched"></small>
+  </div>
+
+
+  <div class="form-group">
+    <labeL>PhoneNumber</labeL>
+    <input
+    type="text" name="PhoneNumber" required minlength="9"
+    class="form-control" #PhoneNumber="ngModel" [(ngModel)]="newperson.PhoneNumber"
+    [class.is-invalid]="PhoneNumber.invalid && PhoneNumber.touched"
+    >
+    <small class="text-danger" [class.d-none]="PhoneNumber.valid || PhoneNumber.untouched"></small>
+  </div>
+  <div class="form-group">
+    <labeL>Email</labeL>
+    <input
+    type="text" name="Email" required minlength="8"
+    class="form-control" #Email="ngModel" [(ngModel)]="newperson.Email"
+    [class.is-invalid]="Email.invalid && Email.touched"
+    >
+    <small class="text-danger" [class.d-none]="Email.valid || Email.untouched"></small>
+  </div>
+  <button type="submit" (click)="addPerson()"></button>
+</form>
+</div>-->
+
+
+
+
+
+
+
